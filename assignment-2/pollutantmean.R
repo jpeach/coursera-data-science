@@ -6,7 +6,7 @@
 #' @param id An integer vector indicating the monitor ID numbers to be used.
 #' 
 #' @return The mean of the pollutant across all monitors listed in the 'id' vector.
-pollutantmean <- function(directory, pollutant, id = 1:322) {
+pollutantmean <- function(directory, pollutant, id = 1:332) {
     # First, do some type checking.
     if (!is.character(directory)) stop('directory must be a character')
     if (!is.character(pollutant)) stop('pollutant must be a character')
