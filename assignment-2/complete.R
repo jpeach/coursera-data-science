@@ -12,6 +12,30 @@
 #' @return A data frame where 'id' is the monitor ID and 'nobs' is the number
 #'      of complete cases.
 complete <- function(directory, id = 1:332) {
+    result <- data.frame(row.names = c("id", "nobs"))
+
+    for (i in id) {
+        # Read the data from the file given by 'id'.
+        fname <- sprintf("%s/%03d.csv", directory, i)
+        data <- read.csv(fname)
+
+        # Get a logical vector where 'sulfate' is present.
+        s <- !is.na(data$sulfate)
+        # Get a logical vector where 'nitrate' is present.
+        n <- !is.na(data$nitrate)
+
+        # Now select rows where they are both present
+        present <- data[s & n, ]
+        
+        # Construct a new data frame with the 'id' and 'nobs' values. We know
+        # that the number of observations is the number of rows in our subset.
+        obs <- data.frame(id = i, nobs = nrow(present))
+        
+        # Concatenate the data frames.
+        result <- rbind(result, obs)
+    }
+    
+    result
 }
 
 
