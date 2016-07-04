@@ -22,6 +22,11 @@ pollutantmean <- function(directory, pollutant, id = 1:322) {
         # Subset the a vector of the pollutant we want. Subsetting data gives
         # us a data frame, so we index the single column to get a numeric vector.
         p <- data[pollutant][,1]
+
+        # NOTE: an alternative is to use the [[ extraction operator. See
+        # https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-extractOperator.md
+        # p <- data[[pollutant]]
+
         # Append to our total samples.
         samples = append(samples, p[!is.na(p)])
     }
