@@ -206,8 +206,8 @@ printf("creating grouped averages")
 # Create a second, independent tidy data set with the average of each variable for
 # each activity and each subject.
 uci.dataset.averaged <-
-    melt(uci.dataset.combined, id.vars = c('SubjectId', 'Activity')) %>%
-    group_by(SubjectId, Activity) %>%
+    melt(uci.dataset.combined, id.vars = c('SubjectId', 'Activity'), variable = 'Measurement') %>%
+    group_by(SubjectId, Activity, Measurement) %>%
     summarize(Mean = mean(value))
 
 printf("writing results to %s", resultPath)
