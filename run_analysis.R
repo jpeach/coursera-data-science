@@ -31,12 +31,16 @@ stopifnot(file.exists('activity_labels.txt'))
 # Names not matching the measurement forms are return unharmed.
 #
 # Examples:
-#     fBodyAccJerk-std()-Z    BodyAccJerkZFourierTransformStdDev
-#     fBodyAccMag-mean()      BodyAccMagFourierTransformMean
+#     fBodyAccJerk-std()-Z    BodyAccelerationJerkZFrequencyStdDev
+#     fBodyAccMag-mean()      BodyAccelerationMagnitudeFrequencyMean
 makeMeasurementName <- function(name) {
     mapSignal <- function(namePart) {
        leading <- str_sub(namePart, 1, 1)
        remainder <- str_sub(namePart, 2)
+
+       # Expand the 'Acc' and 'Magnitude' abbreviations.
+       remainder <- str_replace(remainder, 'Acc', 'Acceleration')
+       remainder <- str_replace(remainder, 'Mag', 'Magnitude')
 
        if (leading == 't') {
            c(remainder, 'Time')
@@ -71,6 +75,7 @@ makeMeasurementName <- function(name) {
         name
     }
 }
+
 # Read features.txt to get the names for the data columns. We use
 # read.table rather than read_table because read.table separates by
 # arbitrary whitespace and read_table assumes fixed-width columns.
