@@ -42,6 +42,10 @@ makeMeasurementName <- function(name) {
        remainder <- str_replace(remainder, 'Acc', 'Acceleration')
        remainder <- str_replace(remainder, 'Mag', 'Magnitude')
 
+       # Expand 'Jerk' names.
+       remainder <- str_replace(remainder, 'AccelerationJerk', 'LinearAcceleration')
+       remainder <- str_replace(remainder, 'GyroJerk', 'AngularVelocity')
+
        if (leading == 't') {
            c(remainder, 'Time')
        } else {
