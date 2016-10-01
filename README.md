@@ -7,6 +7,15 @@ on it.
 The variables in the final dataset are described in the
 [codebook](CODEBOOK.md).
 
+The following files are included:
+
+| File | Purpose |
+|------|---------|
+| [CODEBOOK.md](CODEBOOK.md) | This final dataset codebook including various rationales |
+| [README.md](README.md) | This explanatory text. |
+| [run.sh](run.sh) | Bash script to download the UCI dataset and run the analysis. |
+| [run_analysis.R](run_analysis.R) | R script that actually performs the analysis. |
+
 ## Running the Analysis
 
 Executing script [run.sh](run.sh) in the cloned repository will
