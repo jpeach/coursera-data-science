@@ -5,18 +5,18 @@ Course Project that obtain the  UCI HAR data set and run an analysis
 on it.
 
 The variables in the final dataset are described in the
-[codebook](CODEBOOK.md).
+[codebook](CodeBook.md).
 
 The following files are included:
 
 | File | Purpose |
 |------|---------|
-| [CODEBOOK.md](CODEBOOK.md) | This final dataset codebook including various rationales |
+| [CodeBook.md](CodeBook.md) | This final dataset codebook including various rationales |
 | [README.md](README.md) | This explanatory text. |
 | [run.sh](run.sh) | Bash script to download the UCI dataset and run the analysis. |
 | [run_analysis.R](run_analysis.R) | R script that actually performs the analysis. |
 
-## Running the analysis wih run.sh
+## Running the analysis with run.sh
 
 Executing script [run.sh](run.sh) in the cloned repository will
 automatically download the [dataset
@@ -52,8 +52,8 @@ the analysis. For example:
 
 A number of choices we made in the processing of the dataset that
 the assignment brief does not give specific guidance on. The
-[codebook](CODEBOOK.md) explains the
-[selection of mean measurements](CODEBOOK.md#interpreting-mean-measurements),
-[whether the UCI dataset itself should be tidied](CODEBOOK.md#tidying-uci-measurements)
+[codebook](CodeBook.md) explains the
+[selection of mean measurements](CodeBook.md#interpreting-mean-measurements),
+[whether the UCI dataset itself should be tidied](CodeBook.md#tidying-uci-measurements)
 and how UCI measurements were
-[renamed](CODEBOOK.md#measurement-nomencalature).
+[renamed](CodeBook.md#measurement-nomencalature).
