@@ -16,7 +16,7 @@ The following files are included:
 | [run.sh](run.sh) | Bash script to download the UCI dataset and run the analysis. |
 | [run_analysis.R](run_analysis.R) | R script that actually performs the analysis. |
 
-## Running the Analysis
+## Running the analysis wih run.sh
 
 Executing script [run.sh](run.sh) in the cloned repository will
 automatically download the [dataset
@@ -24,8 +24,20 @@ archive](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HA
 and invoke the analysis script. The analysis will write its results
 to the file ``averages.txt`` in the dataset directory.
 
+    CourseraDataCleaningAssignment jpeach$ ./run.sh
+    ...
+    [1] "reading dataset metadata"
+    [1] "reading 'test' dataset"
+    [1] "reading 'train' dataset"
+    [1] "rewriting activities with activity names"
+    [1] "labelling with descriptive variable names"
+    [1] "creating grouped averages"
+    [1] "writing results to averages.txt"
+
+## Running the analysis by hand
+
 To run the [run_analysis.R](run_analysis.R) script by hand, change
-to the directory with the extracted dataset and unvoke ``R`` to run
+to the directory with the extracted dataset and invoke ``R`` to run
 the analysis. For example:
 
     $ cd UCI\ HAR\ Dataset
