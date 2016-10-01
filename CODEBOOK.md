@@ -3,11 +3,16 @@
 This code book describes the variables in the final dataset produced
 from the UCI HAR dataset.
 
-## SubjectId
+The dataset contains 4 variables:
 
-The ``SubjectId`` variable is an integer that uniquely identifies a study participant.
+| Variable name | Variable description |
+|---------------|----------------------|
+| SubjectId | An integer that uniquely identifies a study participant. |
+| Activity | A string (or factor) the indentifies the activity being measured. |
+| Measurement | A string (or factor) the indentifies the original UCI HAR measurement. |
+| Mean | The mean of the measurement. |
 
-## Activity
+## Activity values
 
 The ``Activity`` variable is the name of the participant activity
 that was measured. The names of the measured activities are:
@@ -19,10 +24,12 @@ that was measured. The names of the measured activities are:
 - "STANDING"
 - "LAYING"
 
-## Measurements
+## Measurement Name Interpretation
 
-The remaining variables are measurements of the subject performing a specific
-activity. Each variable name contains either 3 or 4 components.
+The measurement names from the original UCI dataset have been
+expanded to make their semantic more readable and obvious.
+
+Each variable name contains either 3 or 4 components.
 
 1. Measured signal name, components of which are described below
 2. Signal measurement domain, either ``Time`` or ``Frequency``
@@ -59,9 +66,9 @@ The mean and standard deviation of the measurements was calculated
 and is denoted by the ``Mean`` and ``StdDev`` name components.
 
 The following table lists the measurement variable names found in
-the final dataset
+the final dataset:
 
-| Variable name | Description |
+| Measurement name | Description |
 |---------------|-------------|
 | BodyAccelerationMagnitudeFrequencyMean | Mean of the FFT of the body acceleration signal. |
 | BodyAccelerationMagnitudeFrequencyStdDev | Standard deviation of the FFT of the body acceleration signal. |
@@ -79,6 +86,7 @@ the final dataset
 | BodyAccelerationZFrequencyStdDev | Standard deviation of the FFT of the body acceleration on the Z axis. |
 | BodyAccelerationZTimeMean | Mean of the body acceleration on the Z axis. |
 | BodyAccelerationZTimeStdDev | Standard deviation of the body acceleration on the Z axis. |
+
 | BodyAngularVelocityMagnitudeTimeMean |  Mean of the magnitude angular velocity of the body. |
 | BodyAngularVelocityMagnitudeTimeStdDev | Standard deviation of the magnitude angular velocity of the body. |
 | BodyAngularVelocityXTimeMean | Mean of the angular velocity of the body on the X axis. |
