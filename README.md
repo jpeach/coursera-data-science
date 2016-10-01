@@ -31,6 +31,6 @@ A number of choices we made in the processing of the dataset that
 the assignment brief does not give specific guidance on. The
 [codebook](CODEBOOK.md) explains the
 [selection of mean measurements](CODEBOOK.md#interpreting-mean-measurements),
-[whether the UCI dataset itself should be tidied](CODEBOOK.md#whether-to-break-down-uci-measurements)
+[whether the UCI dataset itself should be tidied](CODEBOOK.md#tidying-uci-measurements)
 and how UCI measurements were
 [renamed](CODEBOOK.md#measurement-nomencalature).
