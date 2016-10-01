@@ -4,6 +4,9 @@ This repository contains scripts for the Getting and Cleaning Data
 Course Project that obtain the  UCI HAR data set and run an analysis
 on it.
 
+The variables in the final dataset are described in the
+[codebook](CODEBOOK.md).
+
 ## Running the Analysis
 
 Executing script [run.sh](run.sh) in the cloned repository will
