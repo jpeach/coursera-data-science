@@ -15,6 +15,7 @@ The following files are included:
 | [README.md](README.md) | This explanatory text. |
 | [run.sh](run.sh) | Bash script to download the UCI dataset and run the analysis. |
 | [run_analysis.R](run_analysis.R) | R script that actually performs the analysis. |
+| [averages.txt](averages.txt) | Sample result of running the analysis. |
 
 ## Running the analysis with run.sh
 
