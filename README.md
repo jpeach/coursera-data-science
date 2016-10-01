@@ -27,46 +27,10 @@ the analysis. For example:
 
 ## Rationale
 
-### Interpreting mean measurements
-
-The original dataset contains measurements whose names include the
-``meanFreq()`` tag and the ``mean()`` tag. ``meanFreq()`` means the
-weighted average of the frequency components to obtain a mean
-frequency, whereas ``mean()`` is simply the mean value of the final
-processed measurement.
-
-The assignment brief asks for the mean and standard deviation of
-each measurement. Since mean and weighted average are different
-calculations, it would be misleading to collect them into a single
-variable.
-
-### Whether to break down UCI measurements
-
-The original UCI dataset is not tidy since there is a separate
-variable for each processing step that was applied to a measurement.
-However, the assignment brief asks for the second data set to be
-tidied, not the original UCI data set. The final data is tidy because
-each variable contains exactly one measurement. In the case of the
-``Measurement`` variable, that measurement is the name of the
-variable from the UCI dataset.
-
-For example:
-
-    "SubjectId" "Activity" "Measurement" "Mean"
-    1 "LAYING" "BodyAccelerationXTimeMean" 0.22159824394
-    1 "LAYING" "BodyAccelerationYTimeMean" -0.0405139534294
-    1 "LAYING" "BodyAccelerationZTimeMean" -0.11320355358
-    1 "LAYING" "BodyLinearAccelerationZTimeMean" 0.010834236361
-    ...
-
-### Measurement nomencalature
-
-The measurement names in the final dataset differ from the UCI
-variable names.  Step 4 of the assignment brief specifies that the
-dataset should be labelled with descriptive variable names, so we
-expand the UCI names to be more readable based on information
-provided in the original code book (``features_info.txt``).
-
-Since the final dataset must be derived from step 4, it inherits
-the expanded variable names.
-
+A number of choices we made in the processing of the dataset that
+the assignment brief does not give specific guidance on. The
+[codebook](CODEBOOK.md) explains the
+[selection of mean measurements](CODEBOOK.md#interpreting-mean-measurements),
+[whether the UCI dataset itself should be tidied](CODEBOOK.md#whether-to-break-down-uci-measurements)
+and how UCI measurements were
+[renamed](CODEBOOK.md#measurement-nomencalature).
