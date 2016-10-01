@@ -86,7 +86,6 @@ the final dataset:
 | BodyAccelerationZFrequencyStdDev | Standard deviation of the FFT of the body acceleration on the Z axis. |
 | BodyAccelerationZTimeMean | Mean of the body acceleration on the Z axis. |
 | BodyAccelerationZTimeStdDev | Standard deviation of the body acceleration on the Z axis. |
-
 | BodyAngularVelocityMagnitudeTimeMean |  Mean of the magnitude angular velocity of the body. |
 | BodyAngularVelocityMagnitudeTimeStdDev | Standard deviation of the magnitude angular velocity of the body. |
 | BodyAngularVelocityXTimeMean | Mean of the angular velocity of the body on the X axis. |
