@@ -59,3 +59,14 @@ For example:
     1 "LAYING" "BodyLinearAccelerationZTimeMean" 0.010834236361
     ...
 
+### Measurement nomencalature
+
+The measurement names in the final dataset differ from the UCI
+variable names.  Step 4 of the assignment brief specifies that the
+dataset should be labelled with descriptive variable names, so we
+expand the UCI names to be more readable based on information
+provided in the original code book (``features_info.txt``).
+
+Since the final dataset must be derived from step 4, it inherits
+the expanded variable names.
+
