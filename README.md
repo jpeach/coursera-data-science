@@ -33,6 +33,8 @@ to the file ``averages.txt`` in the dataset directory.
     [1] "labelling with descriptive variable names"
     [1] "creating grouped averages"
     [1] "writing results to averages.txt"
+    CourseraDataCleaningAssignment jpeach$ ls -l UCI\ HAR\ Dataset/averages.txt
+    -rw-r--r--  1 jpeach  staff  812400 Oct  1 12:31 UCI HAR Dataset/averages.txt
 
 ## Running the analysis by hand
 
