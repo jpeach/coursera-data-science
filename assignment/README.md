@@ -53,6 +53,8 @@ the following:
 
 - Uses descriptive activity names to name the activities in the data set
 
+^^ This implies we have to load and cbind the activities too. Maybe the subject?
+
 - Appropriately labels the data set with descriptive variable names.
 
 - From the data set in step 4, creates a second, independent tidy
