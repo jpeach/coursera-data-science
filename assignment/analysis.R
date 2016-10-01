@@ -1,6 +1,7 @@
 library(readr)
 library(dplyr)
 library(stringr)
+library(reshape2)
 
 printf <- function(...) {
     invisible(print(sprintf(...)))
@@ -190,3 +191,13 @@ uci.dataset.combined$Activity <- as.factor(uci.dataset.combined$Activity)
 names(uci.dataset.combined) <- sapply(names(uci.dataset.combined), makeMeasurementName)
 
 # Now we have completed steps 1-3 and we have the dataset in uci.dataset.combined.
+
+# Create a second, independent tidy data set with the average of each variable for
+# each activity and each subject.
+uci.dataset.averaged <-
+    melt(uci.dataset.combined, id.vars = c('SubjectId', 'Activity')) %>%
+    group_by(SubjectId, Activity) %>%
+    summarize(Mean = mean(value))
+
+# Write the final table.
+write.table(uci.dataset.averaged, 'averaged.txt', row.name=FALSE)
