@@ -30,7 +30,7 @@ readFeatures <- function() {
 readActivities <- function() {
     activityTable <- read.table(
         'activity_labels.txt', header = FALSE,
-        col.names = c('FeatureId', 'FeatureName'),
+        col.names = c('ActivityId', 'ActivityName'),
         colClasses = c('integer', 'character'))
 
     activityTable
@@ -118,3 +118,13 @@ uci.dataset.train <- readDataset('train', uci.meta.features)
 
 # Concat the test and training observations.
 uci.dataset.combined <- bind_rows(uci.dataset.test, uci.dataset.train)
+
+# Replace the 'ActivityId' column with the 'Activity' using the names
+# we loaded earlier from the activify labels.
+uci.dataset.combined <-
+    mutate(uci.dataset.combined, Activity = uci.meta.activity$ActivityName[ActivityId]) %>%
+    select(-ActivityId)
+
+# Finally, convert the activity into a factor, since we have a small
+# number of well-defined values.
+uci.dataset.combined$Activity <- as.factor(uci.dataset.combined$Activity)
