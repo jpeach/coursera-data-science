@@ -8,8 +8,8 @@ The dataset contains 4 variables:
 | Variable name | Variable description |
 |---------------|----------------------|
 | SubjectId | An integer that uniquely identifies a study participant. |
-| Activity | A string (or factor) the indentifies the activity being measured. |
-| Measurement | A string (or factor) the indentifies the original UCI HAR measurement. |
+| Activity | A string that indentifies the activity being measured. |
+| Measurement | A string that indentifies the original UCI HAR measurement. |
 | Mean | The mean of the measurement. |
 
 ## Activity values
