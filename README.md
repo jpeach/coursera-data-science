@@ -39,3 +39,23 @@ The assignment brief asks for the mean and standard deviation of
 each measurement. Since mean and weighted average are different
 calculations, it would be misleading to collect them into a single
 variable.
+
+### Whether to break down UCI measurements
+
+The original UCI dataset is not tidy since there is a separate
+variable for each processing step that was applied to a measurement.
+However, the assignment brief asks for the second data set to be
+tidied, not the original UCI data set. The final data is tidy because
+each variable contains exactly one measurement. In the case of the
+``Measurement`` variable, that measurement is the name of the
+variable from the UCI dataset.
+
+For example:
+
+    "SubjectId" "Activity" "Measurement" "Mean"
+    1 "LAYING" "BodyAccelerationXTimeMean" 0.22159824394
+    1 "LAYING" "BodyAccelerationYTimeMean" -0.0405139534294
+    1 "LAYING" "BodyAccelerationZTimeMean" -0.11320355358
+    1 "LAYING" "BodyLinearAccelerationZTimeMean" 0.010834236361
+    ...
+
