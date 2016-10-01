@@ -61,6 +61,8 @@ and is denoted by the ``Mean`` and ``StdDev`` name components.
 The following table lists the measurement variable names found in
 the final dataset
 
+| Variable name | Description |
+|---------------|-------------|
 | BodyAccelerationMagnitudeFrequencyMean | Mean of the FFT of the body acceleration signal. |
 | BodyAccelerationMagnitudeFrequencyStdDev | Standard deviation of the FFT of the body acceleration signal. |
 | BodyAccelerationMagnitudeTimeMean | Mean of the magnitude of the  body acceleration signal. |
