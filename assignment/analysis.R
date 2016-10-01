@@ -3,14 +3,15 @@ library(dplyr)
 library(stringr)
 library(reshape2)
 
+# Path where we will store out final result.
+resultPath <- 'averages.txt'
+
 printf <- function(...) {
     invisible(print(sprintf(...)))
 }
 
 # The current working directory needs to be the 'UCI HAR Dataset'
-# directory containing the extracted files from:
-#
-#   https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+# directory containing the extracted files.
 
 stopifnot(file.exists('features.txt'))
 stopifnot(file.exists('activity_labels.txt'))
@@ -164,17 +165,23 @@ readDataset <- function(directory, featureNames) {
     tbl_df(bind_cols(measurementValues, activityValues, subjectValues))
 }
 
+printf("reading dataset metadata")
+
 # Read the activity metadata.
 uci.meta.activity <- readActivities()
 # Read the features metadata.
 uci.meta.features <- readFeatures()
 
-# Read the test and train datasets.
+printf("reading 'test' dataset")
 uci.dataset.test <- readDataset('test', uci.meta.features)
+
+printf("reading 'train' dataset")
 uci.dataset.train <- readDataset('train', uci.meta.features)
 
 # Concat the test and training observations.
 uci.dataset.combined <- bind_rows(uci.dataset.test, uci.dataset.train)
+
+printf("rewriting activities with activity names")
 
 # Replace the 'ActivityId' column with the 'Activity' using the names
 # we loaded earlier from the activify labels.
@@ -186,11 +193,15 @@ uci.dataset.combined <-
 # number of well-defined values.
 uci.dataset.combined$Activity <- as.factor(uci.dataset.combined$Activity)
 
+printf("labelling with descriptive variable names")
+
 # Rename the variables in the combined dataset by generating more
 # descriptive names.
 names(uci.dataset.combined) <- sapply(names(uci.dataset.combined), makeMeasurementName)
 
 # Now we have completed steps 1-3 and we have the dataset in uci.dataset.combined.
+
+printf("creating grouped averages")
 
 # Create a second, independent tidy data set with the average of each variable for
 # each activity and each subject.
@@ -199,5 +210,7 @@ uci.dataset.averaged <-
     group_by(SubjectId, Activity) %>%
     summarize(Mean = mean(value))
 
+printf("writing results to %s", resultPath)
+
 # Write the final table.
-write.table(uci.dataset.averaged, 'averaged.txt', row.name=FALSE)
+write.table(uci.dataset.averaged, resultPath, row.name=FALSE)
