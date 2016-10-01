@@ -39,10 +39,10 @@ makeMeasurementName <- function(name) {
        remainder <- str_sub(namePart, 2)
 
        if (leading == 't') {
-           c(remainder, 'EuclidianNorm')
+           c(remainder, 'Time')
        } else {
            stopifnot(leading == 'f')
-           c(remainder, 'FourierTransform')
+           c(remainder, 'Frequency')
        }
     }
 
